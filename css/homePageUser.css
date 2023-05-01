@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+body{
+	font-family: 'Roboto Slab', serif;
+}
+
+.calc-count{
+	position: absolute;
+	border: 1px solid aqua;
+	box-shadow: o 5px 15px aquqa;
+	margin: 3em 8em;
+	padding: 2em;
+	font-weight: 500;
+	font-size: 4em;
+
+}

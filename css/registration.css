@@ -1,0 +1,95 @@
+@charset "UTF-8";
+body{
+	font-family: 'Roboto Slab', serif;
+	text-align: left;
+}
+.label-type-radio{
+	text-align: center;
+}
+.desc-text{
+	text-align: center;
+	font-size: 1.4em;
+	font-weight: 500;
+}
+input{
+	border: 1px solid #c4eddc;
+}
+.validationError{
+	color: red;
+}
+.hr-space{
+	margin-bottom: 2em;
+	border: none;
+	background-color:#7dc1a4;
+	box-shadow: 0px 10px 25px #7dc1a4;
+	height: 10px;
+}
+.registration-container{
+	display:flex;
+	justify-content:center;
+	margin: 4em 0;
+	padding: 1em 2em;
+}
+.flex-target{
+	display: flex;
+	flex-direction: column;
+}
+.check-gender{
+	margin: 0em 3em;
+}
+input{
+	margin: .5em .5em;
+}
+label{
+	font-size: 1.1em;
+}
+.gender-act{
+	display: flex;
+	justify-content: center;
+}
+.main-container{
+	display: flex;
+}
+.f-container{
+	display: flex;
+	flex-direction: column;
+}
+.s-container{
+	display: flex;
+	flex-direction: column;
+}
+.submit-form-btn{
+	padding: .5em .5em;
+	color:#68ab8e;
+	text-align:center;
+	font-weight: 400;
+	font-size: 1.5em;
+	margin-top: 2em;
+	margin-bottom: 0;
+	border: 1px solid #c4eddc;
+	background-color: white;
+	width: 300px;
+	margin-left: 4em;
+	margin-right: 4em;
+}
+.field{
+	padding: .5em .5em;
+	margin: 1em auto;
+	width: 300px;
+}
+label{
+	margin:auto;
+}
+.lab{
+	margin-top: 1em;
+}
+.submit-form-btn:hover{
+	box-shadow:0 5px 15px #c4eddc;
+	background-color:#c4eddc;
+}
+.form-registry{
+	width: 600px;
+	border: 1px solid #c4eddc;
+	box-shadow: 0 5px 15px #c4eddc;
+	padding: 2em 3em;
+}
