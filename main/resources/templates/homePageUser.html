@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel = "stylesheet" th:href = "@{/css/homePageUser.css}">
+<link rel = "stylesheet" th:href = "@{/css/mobileHomePageUser.css}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<title>Домашняя страница</title>
+</head>
+<body>
+
+<div class = "navbar-color">
+<nav class="navbar navbar-expand-lg navbar-light container-f fixed-bar">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/}">KcalProject</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">      
+      </ul>
+      <form class="log-btn">
+      	<a th:href = "@{/settings}" th:text = "${userName}"></a>
+      </form>
+    </div>
+  </div>
+</nav>
+</div>
+
+<div class = "container-f">
+<span class = "loaded"></span>
+<div class = "calc-count-space">
+<span  class = "h-calc-count" th:if = "${userCalcTarget == 'weightLoss'}">Количество ккал для похудения:</span>
+<span id = "calc-count" class = "calc-count" th:text = "${userCalc}" th:value = "#{userCalc}" th:if = "${userCalcTarget == 'weightLoss'}" style = "border-color:#ff6464; box-shadow: 0px 5px 15px #ff6464; color:#ff6464;"></span>
+	
+<div class = "calc-count-space">
+<span  class = "h-calc-count" th:if = "${userCalcTarget == 'weightNormal'}"  style = "color:#bdbcbc;">Количество ккал для поддержания веса:</span>
+<span id = "calc-count" class = "calc-count" th:text = "${userCalc}" th:value = "#{userCalc}" th:if = "${userCalcTarget == 'weightNormal'}" style = "border-color:#bdbcbc; box-shadow: 0px 5px 15px #bdbcbc; color:#bdbcbc; "></span>
+</div>
+
+<div class = "calc-count-space">
+<span  class = "h-calc-count" th:if = "${userCalcTarget == 'weightMore'}" style = "color:#41aeff">Количество ккал для набора массы:</span>
+<span id = "calc-count" class = "calc-count" th:text = "${userCalc}" th:value = "#{userCalc}" th:if = "${userCalcTarget == 'weightMore'}" style = "border-color:#41aeff; box-shadow: 0px 5px 15px #41aeff; color:#41aeff;"></span>
+</div>
+
+<div class = "desc-advice">
+	<div class = "h-advice" th:if = "${userCalcTarget == 'weightLoss'}" style = "color: #ff6464;">
+		<span style = "color: #ff6464">Небольшие советы для похудения:</span>
+			<span id = "adive-loss advice" class = "advice advice-loss" th:if = "${userCalcTarget == 'weightLoss'}" style = "border:1px solid #ff6464;color:#ff6464">Ешьте меньше соли, пейте больше воды, спите достаточно и не пытайтесь отказываться от всего сразу, похудение - это постепенный процесс, главное в похудении - понимание, что вес снижается за счет дефицита калорий</span>
+</div>
+</div>
+
+
+<div class = "desc-advice">
+	<div class = "h-advice" th:if = "${userCalcTarget == 'weightNormal'}" style = "color: #bdbcbc; left: 460px;">
+		<span style = "color:#bdbcbc;">Небольшие советы для поддержания веса:</span>
+			<span id = "adive-loss advice" class = "advice advice-main" th:if = "${userCalcTarget == 'weightNormal'}" style = "border:1px solid #bdbcbc;color:#bdbcbc;left:-95px;">В поддержании веса главным является стабильность в еде, в количестве и качестве сна, а также в регулярных физических упражнениях </span>
+</div>
+</div>
+
+
+<div class = "desc-advice">
+	<div class = "h-advice" th:if = "${userCalcTarget == 'weightMore'}" style = "color: #41aeff;">
+		<span style = "color:#41aeff">Небольшие советы для набора массы:</span>
+			<span id = "adive-loss advice" class = "advice advice-more" th:if = "${userCalcTarget == 'weightMore'}" style = "border:1px solid #41aeff; color:#41aeff;">Набор массы происходит за счет восстановления мышц после силовых тренировок и постепенного увеличения калорий, поэтому также занимайтесь спортом, чтобы не набрать лишний жир и спите больше, для полного восстановления</span>
+</div>
+</div>
+</div>
+</div>
+
+
+		<div class = "BMI-flex container-f">
+<span class = "BMI-type" th:if = "${BMI} <= '18,5' and ${BMI} <='25,0'" style = "color:#a85528; border: 1px solid #a85528; box-shadow: 1px 5px 15px #a85528;">
+		<span class = "h-BMI">Индекс массы тела(ИМТ):</span>
+			<span  class = "BMI-count" th:text = "${BMI}" ></span>
+			<span class = "BMI-set">Дефицит</span>				
+		</span>	
+		</div>	
+			
+		<div class = "BMI-flex container-f">
+		<span class = "BMI-type" th:if = "${BMI} >= '18,5' and ${BMI} <='25,0'" style = "color:#4b9f4e; border: 1px solid #4b9f4e;">
+		<span class = "h-BMI">Индекс массы тела(ИМТ):</span>
+			<span th:if= "${BMI} < '25,0'">
+				<span class = "BMI-count" th:text = "${BMI}" ></span>
+			</span>
+			<span class = "BMI-set">Норма</span>
+			
+		</span>
+		</div>
+			
+			
+		<div class = "BMI-flex container-f">
+		<span class = "BMI-type" th:if= "${BMI} >= '25,0'" style = "color:#c22727; border: 1px solid #c22727; box-shadow: 1px 5px 15px #c22727">
+			<span class = "h-BMI">Индекс массы тела(ИМТ):</span>
+				<span  class = "BMI-count" th:text = "${BMI}" ></span>
+				<span class = "BMI-set">Лишний вес</span>
+			</span>
+		</div>
+			
+</body>
+</html>

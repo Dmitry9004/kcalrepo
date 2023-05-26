@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+@media screen and (max-width:480px){
+	
+	.registration-container{
+		margin: 1em auto;
+		font-size:.8em;
+		text-align:center;
+	}
+	.form-registry{
+		width:340px;
+		padding:0;
+		padding-top:1em;	
+		padding-bottom:1em;
+	}
+	.check-gender{
+		margin: 0 1em;
+	}
+	.field{
+	width:200px;
+	font-size:1em;
+	}
+	.main-container{
+		display:block;
+	}
+	.count-action{
+	padding:1em}
+	.form-check-input{
+	margin-top:.4em;}
+	.flex-target{
+	width:280px;
+	margin:auto;
+	text-align:center;}
+	.submit-form-btn{
+	width:200px;
+	font-size:1em;
+	margin-left:5em;
+	}
+	.a-login{
+		margin: auto 7.5em;
+	}
+	.a-login-settings{
+		margin: auto 5em;
+		text-decoration:none;
+	}
+}

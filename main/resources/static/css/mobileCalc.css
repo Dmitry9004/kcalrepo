@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+
+@media screen and (max-width:480px){
+	
+	.container-f{
+		width:360px;
+	}
+	.about-desrciption-type{
+		display:flex;
+		flex-direction: column;
+	}
+	.flex-section-calc{
+	flex-direction: column;
+	}
+	img{
+	display:none;
+	}
+	.type-calc{
+	margin:0;
+	margin-bottom: 10em;
+	text-align: center;
+	}
+	.calc-loss{
+	background-color: #ff6464;
+	box-shadow:0px 5px 15px #ff6464;
+	color: white;}
+	.calc-main{
+	background-color: #bdbcbc;
+	box-shadow:0px 5px 15px #bdbcbc;
+	color: white
+}
+.calc-more{
+	background-color: #41aeff;
+	box-shadow:0px 5px 15px #41aeff;
+	color: white;
+}
+	
+	.desc-type-loss{
+	display:block;}
+	
+	.desc-type-main{
+	display:block;}
+	
+	.desc-type-more{
+	display:block;}
+	
+	
+	.log-btn{
+		display:block;
+		text-align: right;
+margin-right: 1em;
+	}
+	.navbar-brand{
+		padding-bottom:0;
+	}
+	.collapse:not(.show){
+	display:inline;}
+	.navbar{
+		flex-wrap: nowrap;
+	}
+	.hr-calc{
+	margin-top:0;
+	width:300px;
+	}
+	.BMI-type{
+	position:relative;
+	left:0;
+	top:20px;
+	margin:0 auto;
+	}
+	.desc-BMI{
+	position:relative;
+	left:0;
+	height:100%;
+	width:300px;
+	margin-top:0;}
+}

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@media screen and (max-width:480px){
+	.login-form-position{
+		padding: 1em 2em;
+		position: absolute;
+		top:100px;
+	}
+	
+}

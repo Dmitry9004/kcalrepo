@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name = "viewport" content = "width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel = "stylesheet" th:href = "@{/css/registration.css}">
+<link rel = "stylesheet" th:href = "@{/css/mobileRegistry.css}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Регистрация</title>
+</head>
+<body>
+
+
+<div class = "registration-container">
+	<form class = "form-registry" method = "POST" th:action = "@{/registration}" th:object = "${registration}">
+			<div class = "main-container">
+			<div class = "f-container">
+			<span class = "desc-text">Регистрация</span>
+		<input  th:field = "*{username}" class = "field" placeholder = "Введите имя пользователя">
+		<span  class = "validationError" th:if="${#fields.hasErrors('username')}" th:errors = "*{username}">Error usern</span>
+		<span class = "validationError" th:text = "${userError}"></span>
+	
+		<input th:field = "*{password}" type="password" class = "field" placeholder = "Введите пароль">
+		<span  class = "validationError" th:if="${#fields.hasErrors('password')}" th:errors = "*{password}">Error password</span>
+		<span  class = "validationError" th:text = "${passwordError}"></span>
+	
+	
+		<input th:field = "*{passwordConfirm}" type="password" class = "field" placeholder = "Введите пароль повторно">
+		<span  class = "validationError" th:if="${#fields.hasErrors('passwordConfirm')}" th:errors = "*{passwordConfirm}">Error password</span>
+		<hr class = "hr-space"/>
+	
+		<label for = "label-gender" class = "label-type-radi lab">Ваш пол:</label>
+	
+			<span class = "validationError" th:if = "${#fields.hasErrors('gender')}" th:errors = "*{gender}">Error gender</span>
+		<div class = "gender-act">
+		<div class="form-check check-gender">
+  		<input class="form-check-input" type="radio" name="gender" value = "male" id="flexRadioDefault1" th:field = "*{gender}">
+  		<label class="form-check-label gender" for="flexRadioDefault1">
+	    Мужской
+  		</label>
+		</div>
+		<div class="form-check check-gender">
+  		<input class="form-check-input" type="radio" name="gender" value ="female" id="flexRadioDefault2" th:field = "*{gender}">
+  		<label class="form-check-label gender" for="flexRadioDefault2">
+	    Женский
+  	</label>
+  	
+	</div>
+	</div>
+	
+	<div class = "s-container">	
+		<input type = "number" min = 15 max = 80 th:field = "*{age}" class = "field" placeholder = "Введите ваш возраст">
+		<span  class = "validationError" th:if="${#fields.hasErrors('age')}" th:errors = "*{age}">Error age</span>
+			
+		<input type = "number" min = 140 max = 210 th:field = "*{growth}" class = "field" placeholder = "Введите ваш рост">
+		<span class = "validationError" th:if="${#fields.hasErrors('growth')}" th:errors = "*{growth}">Error growth</span>
+		
+		<input type = "number" min = 40 max = 120 th:field = "*{weight}" class = "field" placeholder = "Введите ваш вес">
+		<span  class = "validationError" th:if="${#fields.hasErrors('weight')}" th:errors = "*{weight}">Error weight</span>
+	
+	
+		<label class = "label-type-radio lab">Количество активности:</label>
+		
+<span class = "validationError" th:if = "${#fields.hasErrors('countAction')}" th:errors = "*{countAction}">Error radio</span>
+		 <div class = "count-action">
+			<div class="form-check">
+  <input class="form-check-input" type="radio" name="radio-act" value = "oneTwo" id="flexRadioDefault1" th:field = "*{countAction}">
+  <label class="form-check-label" for="flexRadioDefault1">
+    1,2 - у вас нет физической активноcти и/или сидячая работа
+  </label>
+</div>
+	<div class="form-check">
+  <input class="form-check-input" type="radio" name="radio-act" value = "oneThreeSeventFive" id="flexRadioDefault1" th:field = "*{countAction}">
+  <label class="form-check-label" for="flexRadioDefault1">
+    1,375 - у вас есть небольшое количество активности
+  </label>
+</div>
+	<div class="form-check">
+  <input class="form-check-input" type="radio" name="radio-act" value = "oneFiveFive" id="flexRadioDefault1" th:field = "*{countAction}">
+  <label class="form-check-label" for="flexRadioDefault1">
+    1,55 - вы занимаетесь спортом со средними нагрузками 3-5 раз в неделю
+  </label>
+</div>
+	<div class="form-check">
+  <input class="form-check-input" type="radio" name="radio-act" value = "oneSeventTwoFive" id="flexRadioDefault1" th:field = "*{countAction}">
+  <label class="form-check-label" for="flexRadioDefault1">
+    1,725 - вы занимаетесь спортом 6-7 раз в неделю
+  </label>
+</div>
+	<div class="form-check">
+  <input class="form-check-input" type="radio" name="radio-act" value = "oneNine" id="flexRadioDefault1" th:field  = "*{countAction}">
+  <label class="form-check-label" for="flexRadioDefault1">
+    1,9 - вы занимаетесь тяжелыми видами спорта по 2 раза в день
+  </label>
+</div>
+</div>
+	</div>
+	
+		<div class = "flex-target">
+		<label for = "target" class = "label-type-radio lab" >Ваша цель:</label>
+	
+  		<span class = "validationError" th:if = "${#fields.hasErrors('target')}" th:errors = "*{target}"></span>
+	<div>
+	
+	<input class="form-check-input" type="radio" name="radio-act" value = "weightLoss" id="flexRadioDefault1" th:field = "*{target}">
+  		<label class="form-check-label gender" for="flexRadioDefault1">
+	    Похудение
+  		</label>
+		
+		<input class="form-check-input" type="radio" name="radio-act" value ="weightNormal" id="flexRadioDefault2" th:field = "*{target}">
+  		<label class="form-check-label gender" for="flexRadioDefault2">
+	    Поддержание веса
+  	</label>
+  	<input class="form-check-input" type="radio" name="radio-act" value = "weightMore" id="flexRadioDefault1" th:field = "*{target}">
+  		<label class="form-check-label gender" for="flexRadioDefault1">
+	    Набор массы
+  		</label>
+  	
+	</div>	
+	</div>
+	</div>
+	
+	
+	</div>
+		<input class = "submit-form-btn" type = "Submit" value = "зарегистрироваться">
+		
+	<a th:href = "@{/login}" class = "a-login">Уже есть аккаунт</a>
+	</form>
+
+</div>
+</body>
+</html>
